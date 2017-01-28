@@ -18,7 +18,7 @@ func RestrictNetTraffic(t Target) (res Result) {
 	var netargs types.NetworkListOptions
 	res.Name = "2.1 Restrict network traffic between containers"
 
-	networks, err := t.Client.NetworkList(context.TODO(), netargs)
+	networks, err := t.Client.NetworkList(context.Background(), netargs)
 	if err != nil {
 		res.Skip("Cannot retrieve network list")
 		return
