@@ -15,7 +15,7 @@ dependencies:
 
 test:
   pre:
-    - go vet ./...
+    - govendor vet +local
 
   override:
     - cd $HOME/.go_project/src/github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME && govendor test +local
