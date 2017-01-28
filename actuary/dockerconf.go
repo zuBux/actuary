@@ -147,7 +147,7 @@ func CheckDefaultCgroup(t Target) (res Result) {
 	res.Name = "2.9 Confirm default cgroup usage"
 	cmdLine, _ := getProcCmdline("docker")
 	for _, arg := range cmdLine {
-		if strings.Contains(arg, "--cgroup-parent") {
+		if !strings.Contains(arg, "--cgroup-parent") {
 			res.Pass()
 			return
 		}
